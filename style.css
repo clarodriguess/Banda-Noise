@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/*font-family: 'Ubuntu', sans-serif;*/
+
+*{ 
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  
+body{
+    background-color: #000000;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/*header*/
+header .container{
+    height: 110px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo{
+    width: 150px;   
+}
+
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+
+#menu a{
+    margin: 0 2rem;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+#menu a:hover{
+    color: #fffb00;
+    cursor: pointer;
+}
+
+#btn-mobile{
+    display: none;/*para o botao ficar escondido*/
+}
+
+/*img parallax*/
+.img{    
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+}
+
+#banner{
+    background-image: url(midias/tv1gif.gif);
+    height: 600px;
+}
+
+#loja{
+    background-image: url(midias/grungrbackground.png);
+    height: 550px;
+} 
+/*fim do parallax*/
+
+section h1{
+    font-size: 5rem;
+    text-align: center;
+    line-height: 550px;
+    text-shadow:-2px 0px 0.5px #7ae4ff, -3px 0px 0.4px #ca1120 ;
+}
+
+section h2{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 3rem 0 1rem;
+    text-shadow:-2px 0px 0.5px #7ae4ff, -3px 0px 0.2px #ca1120 ;     
+}
+
+section p{
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: center;
+    margin: 1.2rem auto 2.5rem;
+    
+}
+
+.texto{
+    max-width: 940px;
+    padding: 0 1rem;
+    margin: 1rem auto 5rem;
+}
+
+.videoclipe{
+    display: block;
+    width: 350px;
+    margin: 1.5rem auto;
+}
+
+.camisa{
+    display: block;
+    margin: auto;
+    width: 400px;
+}
+#loja p{    
+    margin: 0 auto;
+    text-shadow:-1px 0px #7ae4ff, -1.5px 0px #ca1120 ;    
+}
+
+.sobre{
+    overflow: hidden;
+}
+
+.membros{
+    display: flex ;
+    align-items: center;
+    margin: 3rem auto;
+}
+
+.membros img{
+    width: 40%;
+    margin: 0 3rem;
+    border: 8px solid #ff9e01; 
+    border-radius: 5px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .6s ease;
+}
+.membros img:hover{
+    border: 2px solid #01d9ff; 
+    -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+   
+.membros p{
+    padding: 0 5rem;
+}
+
+footer div{
+    background-color: #000000;
+    display: flex;
+}
+
+footer img{
+    width: 150px;
+    margin: 0 auto;
+}
+footer p{
+    font-weight: 200;
+    font-size: .9rem;
+    text-align: center;
+    margin: 1rem;
+    text-decoration: none;
+}
+footer a{
+    color: white;
+    opacity: 0.4;
+    text-decoration: none;
+}
+footer a:hover{
+    opacity: 1;
+}
+
+@media(max-width:768px) { 
+    
+    #logo{
+        width: 100px;
+    }
+
+    #menu{
+        display: block;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        top: 110px;
+        right: 0px;
+        background:rgba(4, 4, 4, 0.956);
+        height: 0;
+        z-index: 1000;
+        transition: .6s;
+        overflow-y: hidden;
+    }
+
+    #menu li{
+        padding: 2rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(15, 212, 215, 0.304);
+        text-align: center;
+    }
+
+    #nav.active #menu{
+        height: calc(100vh - 110px);
+        visibility: visible;
+        overflow-y: auto; 
+    }
+
+    #btn-mobile{        
+        display: flex;
+        padding: .5rem 1rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        background: none;
+        gap:  .5rem;
+        color: #ffffff;
+    }
+
+    #hamburger{
+        width: 20px;
+        border-top: 2px solid #ffffff;
+    }
+    #hamburger::after, #hamburger::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+        
+    }
+    #nav.active #hamburger{
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::after{
+        transform: rotate(135deg);
+        top: -7px;
+    } 
+
+    #nav.active #hamburger::before{
+        transform: rotate(-135deg);
+    } 
+
+    section h1{
+        line-height: 390px;
+    }
+
+    .img{
+        background-size: contain;
+    }
+
+    #banner{
+        height: 390px;
+    }
+
+    .membros{
+        flex-direction: column;
+    }
+
+    .invertido{
+        flex-direction: column-reverse;
+    }
+
+    .membros img{
+        width: 70%;
+    }
+
+    .membros p{
+        padding:1rem 2.8rem ;    
+    }
+
+    #home p{
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        margin: 1rem 2rem;
+    }
+}
